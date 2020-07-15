@@ -101,19 +101,7 @@ public class TestShaTan {
         //body > div.cover > p:nth-child(5)
         //body > div.cover > p:nth-child(20) > a  body > div.cover > p:nth-child(7)
         Elements sts = doc.select("body > div.cover > p:nth-child(n+1)");
-//        for (Element st :
-//                sts) {
-//            if (st.text().contains("H小说") || st.text().contains("(H)")
-//                    || st.text().contains("辣文") || st.text().contains("“日”")){
-////                System.out.println(st.child(0).attr("href"));
-//                //http://m.shatanxs.com/detail/8.html
-//                Document doc2 = Jsoup.connect("http://m.shatanxs.com" + st.child(0).attr("href")).timeout(60000).get();
-//                //body > div.cover > div.readlink > a.rl
-//                Element el = doc2.select("body > div.cover > div.readlink > a").first();
-////                System.out.println(el);
-//                urls.add(el.attr("href"));
-//            }
-//        }
+
 
         //body > div:nth-child(6) > a:nth-child(2)
         Element wy = doc.select("body > div:nth-child(6) > a:nth-child(2)").first();
@@ -126,8 +114,6 @@ public class TestShaTan {
             Elements sts2 = doc2.select("body > div.cover > p:nth-child(n+1)");
             for (Element st :
                     sts2) {
-                if (st.text().contains("H小说") || st.text().contains("(H)")
-                        || st.text().contains("辣文") || st.text().contains("“日”")){
 //                    System.out.println(st.child(0).attr("href"));
                     //http://m.shatanxs.com/detail/8.html
                     Document doc3 = Jsoup.connect("http://m.shatanxs.com" + st.child(0).attr("href")).timeout(30000).get();
@@ -135,7 +121,6 @@ public class TestShaTan {
                     Element el = doc3.select("body > div.cover > div.readlink > a").first();
 //                    System.out.println(el);
                     urls.add(el.attr("href"));
-                }
             }
         }
         return urls;
